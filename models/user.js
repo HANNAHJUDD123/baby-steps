@@ -1,43 +1,66 @@
-module.exports = function(sequelize, Sequelize) {
+
+// var Sequelize      = require('sequelize');
+// var sequelize = new Sequelize('db', 'admin', 'pwd', {
+//     host: 'localhost',
+//     port: 3306,
+//     dialect: 'mysql'
+// });
+
+
+
+module.exports = function(sequelize, DataTypes) {
     
     var User = sequelize.define('user', {
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: Sequelize.INTEGER
+            type: DataTypes.INTEGER
         },
         firstname: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             notEmpty: true
         },
         lastname: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             notEmpty: true
         },
         username: {
-            type: Sequelize.TEXT
+            type: DataTypes.STRING
         },
 
         about: {
-            type: Sequelize.TEXT
+            type: DataTypes.STRING
         },
         email: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             validate: {
                 isEmail: true
             }
         },
         password: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         last_login: {
-            type: Sequelize.DATE
+            type: DataTypes.DATE
         },
         status: {
-            type: Sequelize.ENUM('active', 'inactive'),
+            type: DataTypes.STRING,
+            allowNull:false,
             defaultValue: 'active'
         }
     });
+
+    User.associate = function(models) {
+        // Associating Event with Posts
+        // When an Event is deleted, also delete any associated Posts
+        User.hasMany(models.Child, {
+            onDelete: "cascade"
+        });
+        // User.hasMany(models.Event, {
+        //     onDelete: "cascade"
+        // });
+    };
+
     return User;
-}   
+};   

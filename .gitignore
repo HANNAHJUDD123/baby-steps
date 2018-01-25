@@ -23,6 +23,8 @@ coverage
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
+package-lock.json
+
 # Bower dependency directory (https://bower.io/)
 bower_components
 
@@ -59,3 +61,5 @@ typings/
 public/images/upload_images
 
 config/
+
+public/images/upload_images/

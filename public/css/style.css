@@ -1,0 +1,41 @@
+.slideSteps {
+    width: 100%;
+}
+
+body {
+	background-image: url("../img/dino.png");
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 1em;
+	position: fixed;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.big-btn {
+    width: 43%;
+    height: 20%;
+    margin: 2%;
+}
+
+.addChild {
+    margin-top: 20%;
+}
+
+/* LOT OUT */
+.logoutLblPos{
+
+    position:fixed;
+    right:10px;
+    top:5px;
+ }
+
+ .userName {
+	margin-right: 82px;
+    margin-top: 8px;
+ }

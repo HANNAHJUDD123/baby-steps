@@ -1,13 +1,116 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
     <title>Baby Steps</title>
 </head>
+
 <body>
-    <h1>THIS IS THE USERS HOME PAGE</h1>
-    
+
+    <!-- log out -->
+
+    <form align="right" name="form1" method="post" action="/logout">
+        <label class="logoutLblPos">
+            <input name="submit2" type="submit" id="submit2" value="log out">
+        </label>
+        <p class="userName"></p>
+    </form>
+
+    <!-- ===== -->
+
+    <div class="wrapper">
+
+        <div class="container">
+
+        
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-default big-btn btn-info btn-lg addChild" data-toggle="modal" data-target="#myModal">+ ADD CHILD</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <!-- <form class="form-horizontal" action="/api/childs">
+ -->
+                            <form id='uploadForm' enctype="multipart/form-data">
+        <input type='file' name='sampleFile' id="image">
+        <!-- <input type='submit'> -->
+
+
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" class="form-control" name="firstname" placeholder="Baby's first name..">
+
+                                <label for="lname">Last Name</label>
+                                <input type="text" id="lname" class="form-control" name="lastname" placeholder="Baby's last name..">
+
+                                <label for="weight">Weight</label>
+                                <input type="text" id="weight" class="form-control" name="weight" placeholder="7 lbs 2 Oz">
+
+                                <label for="height">Length</label>
+                                <input type="text" id="height"  class="form-control"name="height" placeholder="22 inches">
+
+                                <label for="hspname">Hospital</label>
+                                <input type="text" id="hspname" class="form-control" name="hospitalborn" placeholder="Hospital">
+                                
+                                <label for="statename">State Born</label>
+                                <input type="text" id="statename" class="form-control" name="stateborn" placeholder="Utah">
+
+                                <label for="birthdate">Birth Date</label>
+                                <input type="date" id="birth" class="form-control" name="birthdate" placeholder="">
+
+                                <label for="gender">Gender</label>
+                                <select id="gender" class="form-control" name="gender">
+                                    <option value=" "> </option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+
+                                <!-- <label for="">About child- additional information</label>
+                                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+ -->
+                                <input type="submit" value="Submit">
+
+                           <!--  </form> -->
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button id="closeModal" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="childButtonContainer">
+            <!-- <button type="button" class="btn btn-default big-btn">Child Name</button> -->
+        </div>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/af.js"></script>
+    <script src="../js/home.js"></script>
+
 </body>
+
 </html>
